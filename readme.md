@@ -23,3 +23,7 @@ and add in hosts file:
 ```
 
 4. Now project should be available under http://blog.loc/ on your local machine
+
+# To read
+
+https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/ - coding standards
