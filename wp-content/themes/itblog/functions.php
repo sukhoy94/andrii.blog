@@ -141,9 +141,14 @@ add_action( 'widgets_init', 'itblog_widgets_init' );
  */
 function itblog_scripts() {
 	wp_enqueue_style( 'itblog-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'itblog-style', 'rtl', 'replace' );
+    wp_enqueue_style('bootstrap4', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css');
+    
+    wp_style_add_data( 'itblog-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'itblog-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'boot1','https://code.jquery.com/jquery-3.3.1.slim.min.js', array( 'jquery' ),'',true );
+    wp_enqueue_script( 'boot2','https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', array( 'jquery' ),'',true );
+    wp_enqueue_script( 'boot3','https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js', array( 'jquery' ),'',true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
